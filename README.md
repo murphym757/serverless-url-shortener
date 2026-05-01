@@ -13,7 +13,7 @@ manually to build real operational understanding — not a tutorial follow-along
 
 ## Architecture
 
-![Architecture Diagram](<img width="4257" height="3201" alt="architecture" src="https://github.com/user-attachments/assets/28290e7f-dd09-4bbe-b3b0-b1b750ed8c48" />)
+![Architecture Diagram](https://github.com/user-attachments/assets/28290e7f-dd09-4bbe-b3b0-b1b750ed8c48)
 
 ## AWS Services
 
