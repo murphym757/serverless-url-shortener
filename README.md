@@ -30,3 +30,14 @@ manually to build real operational understanding — not a tutorial follow-along
 ## How It Works
 
 **Shorten a URL — POST /shorten**
+
+## What Broke
+
+- AccessDeniedException on Lambda creation — url-shortener-dev 
+  needed iam:CreateRole permission
+- ResourceNotFoundException — Lambda in us-east-2, 
+  DynamoDB in us-east-1. Recreated Lambda in us-east-1
+- AccessDeniedException on PutItem — Lambda execution role 
+  had no DynamoDB permissions. Added then scoped down to 
+  custom inline policy
+- 302 vs 200 — redirect needs Location header not JSON response
