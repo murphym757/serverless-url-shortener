@@ -31,6 +31,14 @@ manually to build real operational understanding — not a tutorial follow-along
 
 **Shorten a URL — POST /shorten**
 
+**Base URL:** `https://tmmfw1sqq3.execute-api.us-east-1.amazonaws.com`
+
+**Shorten a URL:**
+POST /shorten → returns shortCode
+
+**Redirect:**
+GET /{shortCode} → 302 redirect to original URL
+
 ## What Broke
 
 - AccessDeniedException on Lambda creation — url-shortener-dev 
@@ -41,3 +49,4 @@ manually to build real operational understanding — not a tutorial follow-along
   had no DynamoDB permissions. Added then scoped down to 
   custom inline policy
 - 302 vs 200 — redirect needs Location header not JSON response
+- There were no CORS issues at all
