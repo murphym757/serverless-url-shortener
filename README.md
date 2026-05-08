@@ -49,4 +49,4 @@ GET /{shortCode} → 302 redirect to original URL
   had no DynamoDB permissions. Added then scoped down to 
   custom inline policy
 - 302 vs 200 — redirect needs Location header not JSON response
-- There were no CORS issues at all
+- Had to fix bug that caused DynamioDB to default to the wrong region
