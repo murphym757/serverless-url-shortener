@@ -49,4 +49,6 @@ GET /{shortCode} → 302 redirect to original URL
   had no DynamoDB permissions. Added then scoped down to 
   custom inline policy
 - 302 vs 200 — redirect needs Location header not JSON response
-- Had to fix bug that caused DynamioDB to default to the wrong region
+- boto3 defaulted to wrong AWS region when no region was 
+  explicitly specified. Fixed by passing `region_name='us-east-1'` 
+  to `boto3.resource()`. Always hardcode the region in boto3 clients.
