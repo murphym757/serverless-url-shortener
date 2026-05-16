@@ -13,7 +13,8 @@ https://dwkkik0xw1yy0.cloudfront.net
 
 ## Architecture
 
-![Architecture Diagram](https://github.com/user-attachments/assets/28290e7f-dd09-4bbe-b3b0-b1b750ed8c48)
+![Architecture Diagram](<img width="877" height="1077" alt="URL Shortener Diagram" src="https://github.com/user-attachments/assets/cc06f1cc-c47b-4de2-a8a4-5dbeb878881e" />
+)
 
 ## AWS Services
 
