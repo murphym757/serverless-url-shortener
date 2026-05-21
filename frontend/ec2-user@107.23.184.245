@@ -1,0 +1,156 @@
+=== SYSTEM LOG - AWS EC2 INSTANCE - ip-172-31-45-102 ===
+Generated for Linux command practice
+
+--- AUTH LOGS ---
+May 10 08:01:22 ip-172-31-45-102 sshd[1021]: Accepted publickey for ec2-user from 192.168.1.10 port 54312
+May 10 08:01:23 ip-172-31-45-102 sshd[1021]: pam_unix(sshd:session): session opened for user ec2-user
+May 10 08:15:44 ip-172-31-45-102 sshd[1102]: Failed password for root from 203.0.113.42 port 22
+May 10 08:15:46 ip-172-31-45-102 sshd[1102]: Failed password for root from 203.0.113.42 port 22
+May 10 08:15:48 ip-172-31-45-102 sshd[1102]: Failed password for root from 203.0.113.42 port 22
+May 10 08:16:01 ip-172-31-45-102 sshd[1110]: Invalid user admin from 198.51.100.23 port 45231
+May 10 08:16:03 ip-172-31-45-102 sshd[1110]: Invalid user admin from 198.51.100.23 port 45231
+May 10 09:00:01 ip-172-31-45-102 sshd[1201]: Accepted publickey for ec2-user from 192.168.1.10 port 54400
+May 10 09:45:12 ip-172-31-45-102 sudo[1305]: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user ; USER=root ; COMMAND=/bin/yum update
+May 10 10:00:00 ip-172-31-45-102 sshd[1400]: Failed password for invalid user deploy from 45.33.32.156 port 39812
+May 10 10:00:02 ip-172-31-45-102 sshd[1401]: Failed password for invalid user deploy from 45.33.32.156 port 39813
+May 10 11:22:31 ip-172-31-45-102 sshd[1500]: Accepted publickey for ec2-user from 192.168.1.15 port 60001
+May 10 12:00:00 ip-172-31-45-102 sshd[1600]: Invalid user ubuntu from 91.121.87.34 port 22
+May 10 13:30:45 ip-172-31-45-102 sudo[1700]: ec2-user : TTY=pts/1 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/systemctl restart httpd
+May 10 14:00:00 ip-172-31-45-102 sshd[1800]: Failed password for root from 203.0.113.99 port 22
+May 10 15:10:10 ip-172-31-45-102 sshd[1900]: Accepted publickey for ec2-user from 192.168.1.10 port 54999
+May 10 16:00:00 ip-172-31-45-102 sshd[2000]: Invalid user test from 110.42.55.88 port 44321
+May 10 17:45:00 ip-172-31-45-102 sudo[2100]: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user ; USER=root ; COMMAND=/bin/cat /etc/passwd
+
+--- APPLICATION LOGS ---
+[2024-05-10 08:05:01] INFO  App started on port 3000
+[2024-05-10 08:05:02] INFO  Database connection established - host: db.internal port: 5432
+[2024-05-10 08:05:03] INFO  Redis cache connected - host: cache.internal port: 6379
+[2024-05-10 08:10:15] INFO  GET /api/users 200 45ms user_id=1001
+[2024-05-10 08:10:20] INFO  GET /api/products 200 32ms user_id=1002
+[2024-05-10 08:11:00] WARN  Slow query detected: SELECT * FROM orders WHERE user_id=1003 took 1203ms
+[2024-05-10 08:12:44] ERROR Database connection lost - retrying in 5s
+[2024-05-10 08:12:49] INFO  Database reconnected successfully
+[2024-05-10 08:15:00] INFO  POST /api/orders 201 88ms user_id=1004
+[2024-05-10 08:20:00] ERROR Unhandled exception in /api/checkout: TypeError: Cannot read property 'price' of undefined
+[2024-05-10 08:20:01] ERROR Stack trace: at checkout.js:45 at Layer.handle
+[2024-05-10 08:25:00] INFO  GET /api/users 200 41ms user_id=1005
+[2024-05-10 08:30:00] WARN  Memory usage at 78% - threshold is 80%
+[2024-05-10 08:35:00] ERROR Out of memory: Kill process 2241 (node) score 901
+[2024-05-10 08:35:01] INFO  Process restarted by pm2
+[2024-05-10 09:00:00] INFO  GET /api/health 200 5ms
+[2024-05-10 09:15:22] INFO  POST /api/login 200 120ms user_id=1006
+[2024-05-10 09:20:00] WARN  Rate limit reached for IP 203.0.113.42 on /api/login
+[2024-05-10 09:25:00] ERROR Failed to send email to user@example.com - SMTP timeout
+[2024-05-10 09:30:00] INFO  GET /api/products 200 29ms user_id=1007
+[2024-05-10 10:00:00] INFO  Cron job started: daily_report
+[2024-05-10 10:00:05] INFO  Cron job completed: daily_report - 3201 records processed
+[2024-05-10 10:15:00] WARN  Slow query detected: SELECT * FROM logs WHERE created_at > '2024-05-01' took 2100ms
+[2024-05-10 10:30:00] ERROR Cannot connect to S3 bucket: AccessDenied - check IAM role permissions
+[2024-05-10 10:30:01] INFO  Retrying S3 connection...
+[2024-05-10 10:30:06] INFO  S3 connection established
+[2024-05-10 11:00:00] INFO  GET /api/users 200 38ms user_id=1008
+[2024-05-10 11:10:00] ERROR Disk usage at 91% on /dev/xvda1 - alert sent to ops team
+[2024-05-10 11:15:00] INFO  POST /api/orders 201 77ms user_id=1009
+[2024-05-10 12:00:00] INFO  GET /api/health 200 4ms
+[2024-05-10 12:30:00] WARN  SSL certificate expires in 14 days for api.example.com
+[2024-05-10 13:00:00] INFO  Deployment started - version 2.4.1
+[2024-05-10 13:00:45] INFO  Deployment completed - version 2.4.1
+[2024-05-10 13:01:00] INFO  App started on port 3000 - version 2.4.1
+[2024-05-10 14:00:00] ERROR Unhandled exception in /api/payment: Error: Stripe API timeout
+[2024-05-10 14:00:01] ERROR Stack trace: at payment.js:112 at Layer.handle
+[2024-05-10 14:05:00] INFO  POST /api/payment 200 340ms user_id=1010
+[2024-05-10 15:00:00] INFO  GET /api/health 200 6ms
+[2024-05-10 15:30:00] WARN  Memory usage at 82% - threshold is 80%
+[2024-05-10 16:00:00] INFO  GET /api/users 200 44ms user_id=1011
+[2024-05-10 16:45:00] ERROR Failed to write to log file: Permission denied /var/log/app/error.log
+[2024-05-10 17:00:00] INFO  GET /api/health 200 5ms
+[2024-05-10 17:30:00] INFO  Backup started - target: s3://my-backups-bucket/daily/
+[2024-05-10 17:31:22] INFO  Backup completed - 2.3GB uploaded to S3
+
+--- SYSTEM METRICS ---
+Timestamp           CPU%   MEM%   DISK%  LOAD
+2024-05-10 08:00    12     45     61     0.45
+2024-05-10 08:05    15     47     61     0.51
+2024-05-10 08:10    22     52     61     0.88
+2024-05-10 08:15    88     71     62     3.21
+2024-05-10 08:20    95     79     62     4.10
+2024-05-10 08:25    34     65     62     1.20
+2024-05-10 08:30    18     78     63     0.72
+2024-05-10 08:35    99     91     63     5.44
+2024-05-10 08:40    21     55     63     0.80
+2024-05-10 09:00    10     50     63     0.40
+2024-05-10 09:30    14     51     64     0.48
+2024-05-10 10:00    16     53     64     0.55
+2024-05-10 10:30    45     60     65     1.80
+2024-05-10 11:00    20     55     65     0.75
+2024-05-10 11:10    77     85     91     3.10
+2024-05-10 11:30    18     54     91     0.65
+2024-05-10 12:00    11     50     91     0.42
+2024-05-10 13:00    30     58     91     1.10
+2024-05-10 14:00    25     60     92     0.95
+2024-05-10 15:00    12     52     92     0.44
+2024-05-10 15:30    55     82     92     2.20
+2024-05-10 16:00    14     53     92     0.50
+2024-05-10 17:00    10     49     93     0.38
+
+--- USER ACCOUNTS ---
+root:x:0:0:root:/root:/bin/bash
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+nginx:x:998:998:Nginx web server:/var/lib/nginx:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/false
+deploy:x:1001:1001:Deploy User:/home/deploy:/bin/bash
+backup:x:1002:1002:Backup User:/home/backup:/bin/bash
+node:x:1003:1003:Node App User:/home/node:/sbin/nologin
+
+--- INSTALLED PACKAGES ---
+git-2.40.1
+python3-3.11.2
+pip3-23.0.1
+vim-9.0.1-1
+curl-7.88.1
+wget-1.21.3
+htop-3.2.1
+terraform-1.7.0
+aws-cli-2.15.0
+docker-24.0.5
+nginx-1.24.0
+httpd-2.4.57
+nodejs-20.11.0
+npm-10.2.4
+jq-1.6
+
+--- NETWORK CONNECTIONS ---
+Proto  Local Address           Foreign Address         State
+tcp    0.0.0.0:22              0.0.0.0:*               LISTEN
+tcp    0.0.0.0:80              0.0.0.0:*               LISTEN
+tcp    0.0.0.0:443             0.0.0.0:*               LISTEN
+tcp    0.0.0.0:3000            0.0.0.0:*               LISTEN
+tcp    172.31.45.102:22        192.168.1.10:54312      ESTABLISHED
+tcp    172.31.45.102:3000      10.0.0.5:49201          ESTABLISHED
+tcp    172.31.45.102:3000      10.0.0.8:49340          ESTABLISHED
+tcp    172.31.45.102:443       10.0.0.12:50001         ESTABLISHED
+
+--- CRON JOBS ---
+0 * * * * ec2-user /home/ec2-user/scripts/health_check.sh >> /var/log/health.log 2>&1
+0 2 * * * root /usr/bin/yum update -y >> /var/log/yum_updates.log 2>&1
+30 17 * * * ec2-user /home/ec2-user/scripts/backup.sh >> /var/log/backup.log 2>&1
+0 10 * * 1 root /home/ec2-user/scripts/weekly_report.sh >> /var/log/reports.log 2>&1
+*/5 * * * * ec2-user /home/ec2-user/scripts/metrics.sh >> /var/log/metrics.log 2>&1
+
+--- ENVIRONMENT VARIABLES ---
+HOME=/home/ec2-user
+USER=ec2-user
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
+AWS_DEFAULT_REGION=us-east-1
+AWS_PROFILE=default
+NODE_ENV=production
+PORT=3000
+DB_HOST=db.internal
+DB_PORT=5432
+DB_NAME=appdb
+REDIS_HOST=cache.internal
+REDIS_PORT=6379
+LOG_LEVEL=info
+S3_BUCKET=my-app-assets
