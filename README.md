@@ -133,44 +133,6 @@ Lesson: never make an S3 bucket public for CloudFront. Use OAC.
 - **Database:** DynamoDB (on-demand capacity)
 - **Compute:** Lambda (128MB, default timeout)
 
----
-
-## Project 2 — Infrastructure as Code + CI/CD
-
-*(In progress — rebuilding Project 1 infrastructure using 
-Terraform and GitHub Actions)*
-
-## Stack
-
-- **Terraform** — provisions all AWS infrastructure
-- **GitHub Actions** — CI/CD pipeline
-- **S3 backend** — remote Terraform state storage
-
-### Terraform Setup
-
-Initialized with AWS provider v5.x pinned to `us-east-1` to 
-avoid the region drift issues learned in Project 1.
-
-```hcl
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-
-  required_version = ">= 1.0"
-}
-
-provider "aws" {
-  region = "us-east-1"
-}
-```
-
-Added to `.gitignore`:
-
-
 ## Author
 
 Maurice Murphy — Full-Stack Developer transitioning into Cloud Engineering.  
